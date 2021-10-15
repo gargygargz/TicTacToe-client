@@ -19,4 +19,4 @@ This application allows the user to play tic-tac-toe, alternating between Player
 
 ### Wireframe ###
 
-![Wireframe](public/TTT_laptop.jpg)
+![Wireframe](https://imgur.com/a/Ns8ghvQ)
