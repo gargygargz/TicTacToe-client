@@ -19,4 +19,4 @@ This application allows the user to 1) sign up and 2) sign in to 3) play tic-tac
 
 ### Wireframe ###
 
-![Wireframe](https://imgur.com/a/Ns8ghvQ)
+![Wireframe](./public/TTT_laptop.jpg/)
