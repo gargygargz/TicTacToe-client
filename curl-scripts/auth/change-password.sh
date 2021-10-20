@@ -1,4 +1,4 @@
-# TOKEN=06446c559312aac7a1f212f7f4e06862 OLD_PW=b NEW_PW=c sh curl-scripts/auth/change-password.sh
+# TOKEN=VALUE OLD_PW=value NEW_PW=value sh curl-scripts/auth/change-password.sh
 
 curl "https://tic-tac-toe-api-production.herokuapp.com/change-password" \
   --include \

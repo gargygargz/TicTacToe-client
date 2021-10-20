@@ -1,4 +1,4 @@
-# EMAIL=gs@example.com PASSWORD=b sh curl-scripts/auth/new-game.sh
+# TOKEN=VALUE sh curl-scripts/auth/new-game.sh
 
 curl "https://tic-tac-toe-api-production.herokuapp.com/games \
   --include \
