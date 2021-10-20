@@ -1,1 +1,181 @@
 @import '~bootstrap/scss/bootstrap';
+
+@import url('https://fonts.googleapis.com/css2?family=Rampart+One&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Gluten&display=swap');
+
+$black: #000;
+
+.border {
+  border: 3px solid $black;
+  margin: 20px;
+  padding: 20px;
+}
+
+#after-sign-in {
+  display: none;
+}
+
+#sign-up {
+  display: flex;
+}
+
+#sign-in {
+  display: flex;
+}
+
+#signUpMsg {
+  font-family: 'Gluten', cursive, sans-serif;
+  font-size: 40px;
+  color: #3D405B;
+}
+#signUpBtn {
+  color: #3D405B;
+}
+
+#signInBtn {
+  color: #3D405B;
+}
+
+#signInMsg {
+  font-family: 'Gluten', cursive, sans-serif;
+  font-size: 40px;
+  color: #3D405B;
+}
+
+.afterSignInButtons {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+}
+
+.playGameMsg {
+  font-family: 'Gluten', cursive;
+  font-size: 32px;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  color: #3D405B;
+}
+
+#after-new-game {
+  display: none;
+}
+
+.container {
+  // Set the board's container to take up 100 percent of the viewport's (browser's) height
+  height: 100vh;
+}
+
+body {
+  background-color: #81B29A;
+}
+
+h1 {
+  color: white;
+  font-family: 'Rampart One', cursive, sans-serif;
+  text-align: center;
+  margin: 20px;
+  font-size: 84px;
+}
+
+#new-game {
+  color: #3D405B;
+  text-align: center;
+  margin: 10px;
+}
+
+#game-outcome {
+  text-align: center;
+  font-size: 64px;
+  font-family: 'Rampart One', cursive, sans-serif;
+  color: white;
+  margin: 20px;
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#sign-out {
+  display: flex;
+  justify-content: right;
+  align-items: right;
+}
+
+.board {
+  // Set the margins to auto
+  // When the left and right margins are set to auto, they will be the same and center the board in between the margins
+  margin: auto;
+
+  // Sets the maximum size of the board
+  // 100vh means 100% of the viewport (browser's) height
+  // Subtract -75px so there is space at the bottom
+  // Use the same value for height and width so the board is a square
+  max-height: calc(100vh - 75px);
+  max-width: calc(100vh - 75px);
+}
+
+.box {
+  // Build tic tac toe grid lines using each boxes border
+  // Set all bottom borders to be 3px, solid lines, white
+  // Note: remove the border for the bottom row later in this file
+  border-bottom: 3px solid white;
+
+  // Set all right borders to be 3px, solid lines, white
+  // Note: remove the border for the right row later in this file
+  border-right: 3px solid white;
+
+  // Make every box a flex container, so we can center the content (i.e. X or O) inside of it easily
+  display: flex;
+
+  // Center the content along the main-axis (left-to-right, because flex-direction defaults to `row`)
+  justify-content: center;
+
+  // Center the content along the cross-axis (top-to-bottom, since cross axis is perpendicular to the main-axis)
+  align-items: center;
+
+  // Set the minimum height for each box to be a third of their parent's (board's) height
+  min-height: calc(100% / 3);
+
+  // Each boxes initial background color
+  background-color: #81B29A;
+
+  // Set the x's and o's color
+  color: #F2CC8F;
+
+  // Adds a shadow to the X's and O's
+  // The shadow is placed 2px to the right and 2px below the text
+  // Set the shadow's color to black (rgb: 0, 0, 0) and to be 25% transparent (opacity)
+  text-shadow: 2px 2px rgba(0 , 0, 0, .25);
+
+  // Set the the X's and O's font-size to 15% of the viewport's (browser's) height
+  font-size: 15vh;
+
+  // Prevent the user from selecting the X or O text
+  user-select: none;
+
+
+  // `nth-child` `3n` selects every third box (boxes 3, 6, and 9)
+  // This is a sass nested selector, `&` refers to the current selector `.box`
+  &:nth-child(3n) {
+    // Remove their right border, since we only want lines in between boxes for our grid
+    border-right: 0;
+  }
+
+  // Select the 3 bottom boxes, `nth-last-child` selects elements based on their position, **counting from the end**
+  // "-1n + 3" represents the last three elements among a group of siblings
+  &:nth-last-child(-1n + 3) {
+    // Remove their bottom border, since we only want lines in between boxes for our grid
+    border-bottom: 0;
+  }
+
+  // When you hover over a box
+  &:hover {
+    background-color:#E07A5F;
+  }
+}
