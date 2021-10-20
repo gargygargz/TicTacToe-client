@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-      <title>Example</title>
+      <title>Tic Tac Toe</title>
       <meta name="viewport" content="width=device-width, initial-scale=1">
 
       <!-- Do not add `link` tags-->
@@ -12,6 +12,79 @@
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
     <body>
-      <h1>Browser Template</h1>
+      <h1>Tic Tac Toe</h1>
+      <section id="before-sign-in">
+        <h2 class="playGameMsg">Create an account and log in to play!</h2>
+        <!-- Sign Up form goes here-->
+        <form id="sign-up" class="border">
+          <fieldset>
+            <legend id="signUpMsg">Sign Up</legend>
+            <input type="email" name="credentials[email]" placeholder="Email" required>
+            <input type="password" name="credentials[password]" placeholder="Password" required>
+            <input type="password" name="credentials[password_confirmation]" placeholder="Password Confirmation" required>
+
+            <button id="signUpBtn" class="btn btn-warning">Sign Me Up!</button>
+          </fieldset>
+        </form>
+
+        <!-- Sign In form goes here-->
+        <form id="sign-in" class="border">
+          <fieldset>
+            <legend id="signInMsg">Sign In</legend>
+            <input type="email" name="credentials[email]" placeholder="Email" required>
+            <input type="password" name="credentials[password]" placeholder="Password" required>
+
+            <button id="signInBtn" class="btn btn-warning">Sign In</button>
+          </fieldset>
+        </form>
+      </section>
+
+
+      <!-- We only want this section to be visible after we sign in.
+                 By default it should not be displayed. -->
+
+      <section id="after-sign-in">
+
+          <div class ="afterSignInButtons">
+            <h2 class="playGameMsg">Play a game, have the time of your life!</h2>
+
+            <button id="new-game" class="btn btn-warning">Launch Game</button>
+
+            <button id="sign-out" class="btn btn-light">Sign Out</button>
+          </div>
+      </section>
+
+      <section id="after-new-game">
+          <section>
+            <div class="buttons">
+              <button id="reset-game" class="btn btn-info">Reset Board, Play Again</button>
+            </div>
+            <div>
+              <h2 id="game-outcome"></h2>
+            </div>
+          </section>
+
+      <section class="container">
+          <div id="game-board" class="row h-100 board">
+            <div id="topLeft" class="col-4 box" data-cell-index="0"></div>
+            <div id="topMid" class="col-4 box" data-cell-index="1"></div>
+            <div id="topRight" class="col-4 box" data-cell-index="2"></div>
+            <div id="midLeft" class="col-4 box" data-cell-index="3"></div>
+            <div id="middle" class="col-4 box" data-cell-index="4"></div>
+            <div id="midRight" class="col-4 box" data-cell-index="5"></div>
+            <div id="botLeft" class="col-4 box" data-cell-index="6"></div>
+            <div id="botMid" class="col-4 box" data-cell-index="7"></div>
+            <div id="botRight" class="col-4 box" data-cell-index="8"></div>
+          </div>
+      </section>
+
+      </section>
+
+      <!-- create a section for our user feedback -->
+      <section>
+        <div id="error-message"></div>
+        <div id="success-message"></div>
+      </section>
+
     </body>
 </html>
