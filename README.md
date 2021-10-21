@@ -4,7 +4,7 @@ This application allows the user to 1) sign up and 2) sign in to 3) play tic-tac
 
 ## Important Links ##
 
-[Deployed Client] (https://github.com/gargygargz/TicTacToe-client)
+[Deployed Client] (https://gargygargz.github.io/TicTacToe-client/)
 
 ## Planning ##
 
