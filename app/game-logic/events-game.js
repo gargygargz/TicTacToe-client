@@ -27,11 +27,11 @@ const playerWinConditions = [
 let boardFull = false
 let turn = 0
 
-const activePlayer = (turn) => {
+const activePlayer = function (turn) {
   return turn % 2 === 0 ? 'X' : 'O'
 }
 
-function boardClick (sq) {
+const boardClick = function (sq) {
   if (sq.innerText === '' && boardFull === false) {
     sq.textContent = activePlayer(turn)
     determineGameWinner()
@@ -45,7 +45,7 @@ launch.addEventListener('click', () => {
   )
 })
 
-function determineGameWinner () {
+const determineGameWinner = function () {
   if (turn < 4) {
     return
   }
@@ -70,7 +70,7 @@ function determineGameWinner () {
   }
 }
 
-function resetGame () {
+const resetGame = function () {
   squares.forEach((box) => {
     outcome.innerText = ''
     box.innerText = ''
@@ -82,5 +82,9 @@ function resetGame () {
 reset.addEventListener('click', resetGame)
 
 module.exports = {
-  onNewGame
+  onNewGame,
+  activePlayer,
+  boardClick,
+  determineGameWinner,
+  resetGame
 }
