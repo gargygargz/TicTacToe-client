@@ -14,14 +14,7 @@ const outcome = document.getElementById('game-outcome')
 const reset = document.getElementById('reset-game')
 
 const playerWinConditions = [
-  [0, 1, 2],
-  [3, 4, 5],
-  [6, 7, 8],
-  [0, 3, 6],
-  [1, 4, 7],
-  [2, 5, 8],
-  [2, 4, 6],
-  [0, 4, 8]
+  [0, 1, 2], [3, 4, 5], [6, 7, 8], [0, 3, 6], [1, 4, 7], [2, 5, 8], [2, 4, 6], [0, 4, 8]
 ]
 
 let boardFull = false
@@ -31,24 +24,21 @@ const activePlayer = function (turn) {
   return turn % 2 === 0 ? 'X' : 'O'
 }
 
-const boardClick = function (sq) {
-  if (sq.innerText === '' && boardFull === false) {
-    sq.textContent = activePlayer(turn)
+const boardClick = function (box) {
+  if (box.innerText === '' && boardFull === false) {
+    box.textContent = activePlayer(turn)
     determineGameWinner()
     return turn++
   }
 }
 
 launch.addEventListener('click', () => {
-  squares.forEach((sq) =>
-    sq.addEventListener('click', boardClick.bind(this, sq))
+  squares.forEach((box) =>
+    box.addEventListener('click', boardClick.bind(this, box))
   )
 })
 
 const determineGameWinner = function () {
-  if (turn < 4) {
-    return
-  }
   for (let i = 0; i < squares.length - 1; i++) {
     if (
       squares[playerWinConditions[i][0]].innerText ===
